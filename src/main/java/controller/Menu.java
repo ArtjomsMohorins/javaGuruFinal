@@ -1,5 +1,8 @@
 package controller;
 
+import repository.ProductRepository;
+import service.Repository;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -18,6 +21,14 @@ public class Menu {
         System.out.println(product2);
         System.out.println(product3);
         System.out.println(product4);
+
+        Repository<Long, Product> productRepository = new ProductRepository();
+        productRepository.save(product);
+        productRepository.save(product2);
+        productRepository.save(product3);
+        productRepository.save(product4);
+
+        System.out.println(productRepository.findAll());
 
     }
 /*
